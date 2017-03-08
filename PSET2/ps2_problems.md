@@ -283,6 +283,7 @@ Here's how to run the visualization:
         anim.done()
 
 The resulting animation will look like this:
+
 ![simulation](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/909267ae6cc9645f3d167428ef5f65f7/asset-v1:MITx+6.00.2x_6+3T2016+type@asset+block/files_ps07_files_visualization.png)
 
 The visualization code slows down your simulation so that the animation doesn't zip by too fast (by default, it shows 5 time-steps every second). Naturally, you will want to avoid running the animation code if you are trying to run many trials at once (for example, when you are running the full simulation).
