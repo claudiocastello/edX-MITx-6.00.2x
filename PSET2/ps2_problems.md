@@ -89,7 +89,11 @@ ps2_verify_movement35.pyc, precompiled module for Python 3.5 that assists with t
 This and future problem sets will require you to know OOP. If you need a refresher, please visit these links and make sure you are familiar with these topics.
 
 [Implementing new classes and their attributes.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap12.html)
+
 [Understanding class methods.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap14.html)
+
 [Understanding inheritance.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap16.html)
+
 Telling the difference between a class and an instance of that class - recall that a class is a blueprint of an object, whilst an instance is a single, unique unit of a class.
+
 Utilizing libraries as black boxes.
