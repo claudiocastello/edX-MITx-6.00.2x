@@ -1,4 +1,4 @@
-# MITx: 6.00.2x Introduction to Computational Thinking and Data Science
+## MITx: 6.00.2x Introduction to Computational Thinking and Data Science
 
 Here I'll present some problems that I've solved when attending this edX MOOC from MIT.
 
