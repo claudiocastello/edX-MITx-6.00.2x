@@ -1,7 +1,7 @@
 
 #Simulation Overview
 
-iRobot is a company (started by MIT alumni and faculty) that sells the Roomba vacuuming robot (watch one of the product videos to see these robots in action). Roomba robots move around the floor, cleaning the area they pass over.
+iRobot is a company (started by MIT alumni and faculty) that sells the [Roomba vacuuming robot](http://store.irobot.com/) (watch one of the product videos to see these robots in action). Roomba robots move around the floor, cleaning the area they pass over.
 
 In this problem set, you will code a simulation to compare how much time a group of Roomba-like robots will take to clean the floor of a room using two different strategies.
 
@@ -65,3 +65,31 @@ If a robot detects that it will hit the wall within the time-step, that time ste
 
 Termination
 The simulation ends when a specified fraction of the tiles in the room have been cleaned.
+
+
+# Getting Started
+
+## Introduction
+
+In this problem set you will practice designing a simulation and implementing a program that uses classes.
+
+As with previous problem sets, please don't be discouraged by the apparent length of this assignment. There is quite a bit to read and understand, but most of the problems do not involve writing much code.
+Getting Started
+
+Download and save all the files you need, including:
+
+ps2.py, a skeleton of the solution.
+
+ps2_visualize.py, code to help you visualize the robot's movement (an optional - but cool! - part of this problem set).
+
+ps2_verify_movement35.pyc, precompiled module for Python 3.5 that assists with the visualization code.
+
+## REVIEW OBJECT ORIENTED PROGRAMMING AND CLASSES
+
+This and future problem sets will require you to know OOP. If you need a refresher, please visit these links and make sure you are familiar with these topics.
+
+[Implementing new classes and their attributes.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap12.html)
+[Understanding class methods.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap14.html)
+[Understanding inheritance.](http://www.greenteapress.com/thinkpython/thinkCSpy/html/chap16.html)
+Telling the difference between a class and an instance of that class - recall that a class is a blueprint of an object, whilst an instance is a single, unique unit of a class.
+Utilizing libraries as black boxes.
