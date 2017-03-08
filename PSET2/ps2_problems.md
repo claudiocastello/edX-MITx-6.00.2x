@@ -7,7 +7,7 @@ In this problem set, you will code a simulation to compare how much time a group
 
 The following simplified model of a single robot moving in a square 5x5 room should give you some intuition about the system we are simulating.
 
-![t0]https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/a9599c894201ed96d8cd6d1afd778a62/asset-v1:MITx+6.00.2x_6+3T2016+type@asset+block/files_ps07_files_screen1.png
+![t0](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/a9599c894201ed96d8cd6d1afd778a62/asset-v1:MITx+6.00.2x_6+3T2016+type@asset+block/files_ps07_files_screen1.png)
 The robot starts out at some random position in the room, and with a random direction of motion. The illustrations below show the robot's position (indicated by a black dot) as well as its direction (indicated by the direction of the red arrowhead).
 
 Time t = 0
