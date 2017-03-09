@@ -1,3 +1,5 @@
+# Problem 3
+
 You are creating a song playlist for your next party. You have a collection of songs that can be represented as a list of tuples. Each tuple has the following elements:
 
     name: the first element, representing the song name (non-empty string)
@@ -30,5 +32,3 @@ def song_playlist(songs, max_size):
     Returns: a list of a subset of songs fitting in 'max_size' in the order 
              in which they were chosen.
     """
-
-Paste your entire function (including the definition) in the box. Do not import anything. Do not leave any debugging print statements.
