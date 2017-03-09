@@ -83,3 +83,53 @@ If you comment out your versions of these classes in ps3b.py, and add the follow
 If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code.
 
 For Python 3.5: from ps3b_precompiled_35 import *
+
+# Problem 3
+
+In this problem, we consider the effects of both administering drugs to the patient and the ability of virus particle offsprings to inherit or mutate genetic traits that confer drug resistance. As the virus population reproduces, mutations will occur in the virus offspring, adding genetic diversity to the virus population. Some virus particles gain favorable mutations that confer resistance to drugs.
+
+#### ResistantVirus class
+
+In order to model this effect, we introduce a subclass of SimpleVirus called ResistantVirus. ResistantVirus maintains the state of a virus particle's drug resistances, and accounts for the inheritance of drug resistance traits to offspring. Implement the ResistantVirus class.
+
+##### Hint: If you are really unsure about how to think about what each child resistances should be changed to, here is a different approach. If the probability mutProb is successful, the child resistance switches. Otherwise, the child resistance stays the same as the parent resistance.
+
+If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code.
+
+# Problem 4
+
+We also need a representation for a patient that accounts for the use of drug treatments and manages a collection of ResistantVirus instances. For this, we introduce the TreatedPatient class, which is a subclass of Patient. TreatedPatient must make use of the new methods in ResistantVirus and maintain the list of drugs that are administered to the patient.
+
+Drugs are given to the patient using the TreatedPatient class's addPrescription() method. What happens when a drug is introduced? The drugs we consider do not directly kill virus particles lacking resistance to the drug, but prevent those virus particles from reproducing (much like actual drugs used to treat HIV). Virus particles with resistance to the drug continue to reproduce normally. Implement the TreatedPatient class.
+
+##### Hint: If you are really unsure about how to think about what each child resistances should be changed to, here is a different approach. If the probability mutProb is successful, the child resistance switches. Otherwise, the child resistance stays the same as the parent resistance.
+
+If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code.
+
+# Problem 5
+
+In this problem, we will use the implementation you filled in for Problem 4 to run a simulation. You will create a TreatedPatient instance with the following parameters, then run the simulation:
+
+    viruses, a list of 100 ResistantVirus instances
+
+    maxPop, maximum sustainable virus population = 1000
+
+Each ResistantVirus instance in the viruses list should be initialized with the following parameters:
+
+    maxBirthProb, maximum reproduction probability for a virus particle = 0.1
+
+    clearProb, maximum clearance probability for a virus particle = 0.05
+
+    resistances, The virus's genetic resistance to drugs in the experiment = {'guttagonol': False}
+
+    mutProb, probability of a mutation in a virus particle's offspring = 0.005
+
+Run a simulation that consists of 150 time steps, followed by the addition of the drug, guttagonol, followed by another 150 time steps. You should make use of the function simulationWithDrug(numViruses, maxPop, maxBirthProb, clearProb, resistances, mutProb, numTrials). As with problem 3, perform up to 100 trials and make sure that your results are repeatable and representative.
+
+Create one plot that records both the average total virus population and the average population of guttagonol-resistant virus particles over time.
+
+A few good questions to consider as you look at your plots are: What trends do you observe? Are the trends consistent with your intuition? Feel free to discuss the answers to these questions in the forum, to fully cement your understanding of this problem set, processing and interpreting data.
+
+Again, as in Problem 2, you can use the provided .pyc file to check that your implementation of the TreatedPatient and ResistantVirus classes work as expected.
+
+If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code.
