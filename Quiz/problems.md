@@ -21,7 +21,7 @@ For example,
     If songs = [('Roar',4.4, 4.0),('Sail',3.5, 7.7),('Timber', 5.1, 6.9),('Wannabe',2.7, 1.2)] and max_size = 12.2, the function will return ['Roar','Wannabe','Timber']
     If songs = [('Roar',4.4, 4.0),('Sail',3.5, 7.7),('Timber', 5.1, 6.9),('Wannabe',2.7, 1.2)] and max_size = 11, the function will return ['Roar','Wannabe']
     
-You can start with the skeleton below.
+Write the function implementing this greedy algorithm with the specification below:
 
     def song_playlist(songs, max_size):
         """
