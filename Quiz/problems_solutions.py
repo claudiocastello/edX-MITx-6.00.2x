@@ -64,7 +64,6 @@ def greedySum(L, s):
 def max_contig_sum(L):
     """ L, a list of integers, at least one positive
     Returns the maximum sum of a contiguous subsequence in L """
-    
     def recur_sum(slicedL, data):
         if len(slicedL) == 1:
             data.append(slicedL[0])
