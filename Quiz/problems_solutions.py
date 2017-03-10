@@ -1,5 +1,5 @@
 #
-# Problem 3
+# Problem 3 - Song Playlist
 #
 def song_playlist(songs, max_size):
     '''
@@ -29,7 +29,7 @@ def song_playlist(songs, max_size):
         return songList
 
 #
-# Problem 4
+# Problem 4 - Multipliers
 #
 def greedySum(L, s):
     """ input: s, positive integer, what the sum should add up to
@@ -57,3 +57,30 @@ def greedySum(L, s):
         return sum(tempMultipliers)
     else:
         return 'no solution'
+
+#
+# Problem 5 - Contiguous Sum
+#
+def max_contig_sum(L):
+    """ L, a list of integers, at least one positive
+    Returns the maximum sum of a contiguous subsequence in L """
+    
+    def recur_sum(slicedL, data):
+        if len(slicedL) == 1:
+            data.append(slicedL[0])
+            return data
+        else:
+            sumList = data
+            count = len(slicedL)
+            while count > 0:
+                tempSum = sum(slicedL[0:(count)])
+                sumList.append(tempSum)
+                count -= 1
+            return recur_sum(slicedL[1:], sumList)
+    if L == []:
+        return 0
+    elif len(L) == 1:
+        return L[0]
+    else:     
+        sumList = recur_sum(L, [])
+        return max(sumList)    
