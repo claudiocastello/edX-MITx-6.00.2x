@@ -46,6 +46,6 @@ is the estimated y value for the i-th data point (i.e. predicted by the regressi
 
 ![r2](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/83df4c1c72ef01bd64e3ff4af2d2f60c/asset-v1:MITx+6.00.2x_6+3T2016+type@asset+block/r2.PNG)
 
-If you are still confused about R^2 , its wikipedia page has a good explanation about its use/how to calculate it.
+If you are still confused about R^2 , its [wikipedia page](https://en.wikipedia.org/wiki/Coefficient_of_determination) has a good explanation about its use/how to calculate it.
 
 Note: If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code. Unfortunately, pylab does not work with the grader.
