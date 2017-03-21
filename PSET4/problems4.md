@@ -49,3 +49,19 @@ is the estimated y value for the i-th data point (i.e. predicted by the regressi
 If you are still confused about R^2 , its [wikipedia page](https://en.wikipedia.org/wiki/Coefficient_of_determination) has a good explanation about its use/how to calculate it.
 
 Note: If you want to use numpy arrays, you should import numpy as np and use np.METHOD_NAME in your code. Unfortunately, pylab does not work with the grader.
+
+
+## Problem 3
+
+We have learned how to obtain a numerical metric for evaluation. Visualizing our data samples along with fitting curves can also help us figure out the goodness of obtained models. In this problem, we will integrate the numerical metrics and visualization for a comprehensive evaluation.
+
+Implement function evaluate_models_on_training. This function takes as input your data samples (x and y) and the list of models (which are lists of coefficients obtained from generate_models) that you want to apply to your data.
+
+This function should generate a figure for each model. In this figure, you are to plot your data along with your best fit curve, and report on the goodness of the fit with the R^2 value. When you are writing this function try to make your graph match the following format:
+
+    Plot the data points as individual blue dots
+    Plot your model as a red solid line
+    Include a title and label your axes
+    Your title should include the value of your model and the R^2 degree of this model. Your title could be longer than your graph. To fix that you can add "\n", which adds a newline to your string, in your title when you concatenate several pieces of information (e.g., title = string_a + "\n" + string_b ).
+
+After you finish writing the function, you have all the components needed to start generating data samples from the raw temperature records and investigate the trend. Run the following code at the bottom ps4.py.
