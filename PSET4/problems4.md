@@ -15,9 +15,16 @@ In order to parse the raw data, in ps4.py w e have implemented a helper class Cl
 
 Implement the generate_models function.
 
-    x and y are two lists corresponding to the x-coordinates and y-coordinates of the data samples (or data points); for example, if you have N data points, x = [x1 , x2 , ..., xN ] and y = [y1 , y2 , ..., yN ], where x_i and y_i are the x and y coordinate of the i-th data points. In this problem set, each x coordinate is an integer and corresponds to the year of a sample (e.g., 1997); each corresponding y coordinate is a float and represents the temperature observation (will be computed in multiple ways) of that year in Celsius. This representation will be used throughout the entire problem set.
-    degs is a list of integers indicating the degree of each regression model that we want to create. For each model, this function should fit the data (x,y) to a polynomial curve of that degree.
-    This function should return a list of models. A model is the numpy 1d array of the coefficients of the fitting polynomial curve. Each returned model should be in the same order as their corresponding integer in degs.
+    x and y are two lists corresponding to the x-coordinates and y-coordinates of the data samples (or data points);
+    for example, if you have N data points, x = [x1 , x2 , ..., xN ] and y = [y1 , y2 , ..., yN ], where x_i and y_i
+    are the x and y coordinate of the i-th data points. In this problem set, each x coordinate is an integer and
+    corresponds to the year of a sample (e.g., 1997); each corresponding y coordinate is a float and represents the
+    temperature observation (will be computed in multiple ways) of that year in Celsius. This representation will be
+    used throughout the entire problem set.
+    degs is a list of integers indicating the degree of each regression model that we want to create. For each model,
+    this function should fit the data (x,y) to a polynomial curve of that degree.
+    This function should return a list of models. A model is the numpy 1d array of the coefficients of the fitting
+    polynomial curve. Each returned model should be in the same order as their corresponding integer in degs.
 
 Example:
 
@@ -62,7 +69,9 @@ This function should generate a figure for each model. In this figure, you are t
     Plot the data points as individual blue dots
     Plot your model as a red solid line
     Include a title and label your axes
-    Your title should include the value of your model and the R^2 degree of this model. Your title could be longer than your graph. To fix that you can add "\n", which adds a newline to your string, in your title when you concatenate several pieces of information (e.g., title = string_a + "\n" + string_b ).
+    Your title should include the value of your model and the R^2 degree of this model.
+    Your title could be longer than your graph. To fix that you can add "\n", which adds a newline to your string,
+    in your title when you concatenate several pieces of information (e.g., title = string_a + "\n" + string_b ).
 
 After you finish writing the function, you have all the components needed to start generating data samples from the raw temperature records and investigate the trend. Run the following code at the bottom ps4.py.
 
