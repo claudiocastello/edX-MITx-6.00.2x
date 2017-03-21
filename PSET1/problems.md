@@ -1,12 +1,12 @@
-#Space Cows Introduction
+# Space Cows Introduction
 
 A colony of Aucks (super-intelligent alien bioengineers) has landed on Earth and has created new species of farm animals! The Aucks are performing their experiments on Earth, and plan on transporting the mutant animals back to their home planet of Aurock. In this problem set, you will implement algorithms to figure out how the aliens should shuttle their experimental animals back across space.
 
-###Getting started!
+### Getting started!
 
 Please do not rename the files we provide you with, change any of the provided helper functions, change function/method names, or delete provided docstrings. You will need to keep ps1_partition.py and ps1_cow_data.txt in the same folder as ps1.py.
 
-###Transporting Cows Across Space!
+### Transporting Cows Across Space!
 
 The aliens have succeeded in breeding cows that jump over the moon! Now they want to take home their mutant cows. The aliens want to take all chosen cows back, but their spaceship has a weight limit and they want to minimize the number of trips they have to take across the universe. Somehow, the aliens have developed breeding technology to make cows with only integer weights.
 
@@ -22,7 +22,7 @@ Betsy,9
 ...
 
 
-##Problem 1
+## Problem 1
 
 One way of transporting cows is to always pick the heaviest cow that will fit onto the spaceship
 first. This is an example of a greedy algorithm. So if there are only 2 tons of free space on your
@@ -35,7 +35,7 @@ taken on that trip.
 
 Note: Make sure not to mutate the dictionary of cows that is passed in!
 
-###Assumptions:
+### Assumptions:
 
     The order of the list of trips does not matter. That is, [[1,2],[3,4]] and [[3,4],[1,2]] are
     considered equivalent lists of trips.
@@ -44,7 +44,7 @@ Note: Make sure not to mutate the dictionary of cows that is passed in!
     If multiple cows weigh the same amount, break ties arbitrarily.
     The spaceship has a cargo weight limit (in tons), which is passed into the function as a parameter.
 
-###Example:
+### Example:
 
 Suppose the spaceship has a weight limit of 10 tons and the set of cows to transport is
 {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}.
@@ -61,7 +61,7 @@ and then picks Callie as the last cow. Since they will both fit, this makes the 
 The final result then is [["Jesse", "Maybel"], ["Maggie", "Callie"]].
 
 
-##Problem 2
+## Problem 2
 
 Another way to transport the cows is to look at every possible combination of trips and pick the
 best one. This is an example of a brute force algorithm.
@@ -70,14 +70,14 @@ Implement a brute force algorithm to find the minimum number of trips needed to 
 across the universe in the function brute_force_cow_transport. The function returns a list of lists,
 where each inner list represents a trip and contains the names of cows taken on that trip.
 
-###Notes:
+### Notes:
 
     Make sure not to mutate the dictionary of cows!
     In order to enumerate all possible combinations of trips, you will want to work with set partitions.
     We have provided you with a helper function called get_partitions that generates all the set partitions
     for a set of cows. More details on this function are provided below.
 
-###Assumptions:
+### Assumptions:
 
     Assume that order doesn't matter. (1) [[1,2],[3,4]] and [[3,4],[1,2]] are considered equivalent lists
     of trips. (2) [[1,2],[3,4]] and [[2,1],[3,4]] are considered the same partitions of [1,2,3,4].
@@ -104,7 +104,7 @@ call get_partitions on a list [1,2,3] is the following. Try it out in ps1_partit
 for partition in get_partitions([1,2,3]):
     print(partition)
 
-###Example:
+### Example:
 
 Suppose the spaceship has a cargo weight limit of 10 tons and the set of cows to transport is
 {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}.
