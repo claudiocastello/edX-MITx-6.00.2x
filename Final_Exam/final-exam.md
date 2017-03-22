@@ -124,7 +124,7 @@ At the end of each time step, record the number of foxes and rabbits.
 
 Run the simulation for 200 time steps, and then plot the population of rabbits and the population of foxes as a function of time step. (You do not need to paste your code for plotting for Part A of this problem).
 
-Use the following steps, and the template file rabbits.py (click to download .py file), as guides in your implementation of this simulation.
+Use the following steps, and the template file [rabbits.py](https://github.com/claudiocastello/edX-MITx-6.00.2x/blob/master/Final_Exam/rabbits.py) (click to download .py file), as guides in your implementation of this simulation.
 
 Step 1: Write the procedure, rabbitGrowth, that updates the number of rabbits during the first part of a time step
 
