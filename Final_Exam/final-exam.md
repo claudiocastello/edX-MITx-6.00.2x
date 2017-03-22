@@ -112,7 +112,8 @@ The following facts are true about the fox and rabbit population:
     If a fox succeeds in hunting, it will decrease the number of rabbits by 1 immediately.
     Remember that the population of rabbits is never lower than 10.
 
-    Additionally, if a fox succeeds in hunting, then it has a 1/3 probability of giving birth in the current time-step.
+    Additionally, if a fox succeeds in hunting, then it has a 1/3 probability of giving
+    birth in the current time-step.
 
     If a fox fails in hunting then it has a 10 percent chance of dying in the current time-step.
     If the starting population is below 10 then you should do nothing. You should not increase
@@ -135,7 +136,6 @@ Step 3: Write the master procedure, runSimulation, that loops for some amount of
 Paste your code for the three functions rabbitGrowth, foxGrowth, and runSimulation in the following box.
 WARNING
 
-DO NOT define the global variables MAXRABBITPOP, CURRENTRABBITPOP, or CURRENTFOXPOP in this box. We alter the values of these variables to test your code. If you define the variables in this box, you may overwrite our values, causing your code to be marked incorrect.
 CLARIFICATIONS / HINTS
 
     "See Full Output": If you are getting the line "0 10" in your output for "Test 4 foxGrowth" then for this particular test, your code changes the CURRENTFOXPOP (increases it if the fox population has gone below the minimum fox population), which is not the right behavior -- the code should not reset CURRENTFOXPOP.
