@@ -44,5 +44,6 @@ Paste your entire function (including the definition) in the box.
 Restrictions:
 
     Do not paste import pylab in the box.
-    You should only be using the pylab.hist, pylab.title, pylab.xlabel, pylab.ylabel, pylab.show functions from the pylab module.
+    You should only be using the pylab.hist, pylab.title, pylab.xlabel,
+    pylab.ylabel, pylab.show functions from the pylab module.
     Do not leave any debugging print statements when you paste your code in the box.
