@@ -21,10 +21,12 @@ Restrictions:
     Do not leave any debugging print statements when you paste your code in the box.
 
 ## Problem 4-1
-You are given the following function and class and function specifications for the two coding problems on this page (also available in this file, die.py):
+You are given the following function and class and function specifications for
+the two coding problems on this page (also available in this file, die.py):
 die.py
 
-Write a function called makeHistogram(values, numBins, xLabel, yLabel, title=None), with the following specification:
+Write a function called makeHistogram(values, numBins, xLabel, yLabel, title=None),
+with the following specification:
 
 def makeHistogram(values, numBins, xLabel, yLabel, title=None):
     """
