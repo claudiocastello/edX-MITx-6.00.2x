@@ -179,8 +179,29 @@ def evaluate_models_on_training(x, y, models):
     Returns:
         None
     """
-    # TODO
-    pass
+    modelsDegrees = []
+    estYValsList =[]
+    allR2Values = []
+    for model in models:
+        modelsDegrees.append(len(model) - 1)
+        estYVals = []
+        estYVals = np.polyval(model, x)
+        estYValsList.append(estYVals)
+        calcR2Squared = r_squared(y, estYVals)
+        allR2Values.append(calcR2Squared)
+    
+    maxR2Index = allR2Values.index(max(allR2Values))
+
+    pylab.figure('Models')
+    pylab.clf()
+    pylab.plot(x, y, 'bo', label = 'Data')
+    pylab.plot(x, estYValsList[maxR2Index], 'r-', label = 'Fit of degree '\
+                   + str(modelsDegrees[maxR2Index])\
+                   + ', R2 = ' + str(round(max(allR2Values), 5)))
+    pylab.legend(loc = 'best')
+    pylab.title('Best Regression Fit')
+    pylab.xlabel('Year')
+    pylab.ylabel('Temperature')
 
 
 ### Begining of program
