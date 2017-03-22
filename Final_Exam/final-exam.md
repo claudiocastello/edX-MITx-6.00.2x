@@ -23,7 +23,7 @@ Restrictions:
 ## Problem 4-1
 You are given the following function and class and function specifications for
 the two coding problems on this page (also available in this file, die.py):
-die.py
+[die.py](https://github.com/claudiocastello/edX-MITx-6.00.2x/blob/master/Final_Exam/die.py)
 
 Write a function called makeHistogram(values, numBins, xLabel, yLabel, title=None),
 with the following specification:
