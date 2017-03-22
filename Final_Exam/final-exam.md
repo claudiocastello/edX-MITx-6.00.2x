@@ -69,7 +69,8 @@ A run of numbers counts the number of times the same dice value shows up in cons
     a dice roll of 1 3 3 2 has a longest run of 2
     a dice roll of 5 4 4 4 5 5 2 5 has a longest run of 3
 
-When this function is called with the test case given in the file, it will return 5.312. Your simulation may give slightly different values.
+When this function is called with the test case given in the file, it will return 5.312.
+Your simulation may give slightly different values.
 
 Paste your entire function (including the definition) in the box.
 
@@ -125,7 +126,7 @@ At the end of each time step, record the number of foxes and rabbits.
 
 Run the simulation for 200 time steps, and then plot the population of rabbits and the population of foxes as a function of time step. (You do not need to paste your code for plotting for Part A of this problem).
 
-Use the following steps, and the template file [rabbits.py](https://github.com/claudiocastello/edX-MITx-6.00.2x/blob/master/Final_Exam/rabbits.py) (click to download .py file), as guides in your implementation of this simulation.
+Use the following steps, and the template file [rabbits.py](https://github.com/claudiocastello/edX-MITx-6.00.2x/blob/master/Final_Exam/rabbits.py), as guides in your implementation of this simulation.
 
 Step 1: Write the procedure, rabbitGrowth, that updates the number of rabbits during the first part of a time step
 
@@ -138,6 +139,11 @@ WARNING
 
 CLARIFICATIONS / HINTS
 
-    "See Full Output": If you are getting the line "0 10" in your output for "Test 4 foxGrowth" then for this particular test, your code changes the CURRENTFOXPOP (increases it if the fox population has gone below the minimum fox population), which is not the right behavior -- the code should not reset CURRENTFOXPOP.
-    It is not correct to assume that there is a 1/3 chance that the population increases in "Test 3 foxGrowth". Pay special attention to the following statement in the docstring of foxGrowth(): 
-    Each fox, based on the probabilities in the problem statement, may eat one rabbit (but only if there are more than 10 rabbits).
+    "See Full Output": If you are getting the line "0 10" in your output for "Test 4 foxGrowth"
+    then for this particular test, your code changes the CURRENTFOXPOP (increases it if the fox
+    population has gone below the minimum fox population), which is not the right behavior -- the
+    code should not reset CURRENTFOXPOP.
+    It is not correct to assume that there is a 1/3 chance that the population increases in "Test 3
+    foxGrowth". Pay special attention to the following statement in the docstring of foxGrowth():
+    Each fox, based on the probabilities in the problem statement, may eat one rabbit (but only if
+    there are more than 10 rabbits).
