@@ -55,11 +55,32 @@ def makeHistogram(values, numBins, xLabel, yLabel, title=None):
       - If title is provided by caller, puts that title on the figure and otherwise
         does not title the figure
     """
-    pylab.hist(values, numBins)
+    pylab.hist(values, numBins, normed=False, range=(0,numBins))
     pylab.title(title)
     pylab.xlabel(xLabel)
     pylab.ylabel(yLabel)
-    
+
+# x = []
+# for i in range(500):
+#     x.append(random.randint(0,100))
+
+# makeHistogram(x, 20, 'Values', 'Frequency')
+
+### Helper ###
+#
+def longestRun(inputList):
+    longestRun = 1
+    counter = 1
+    for i in range(len(inputList) - 1):
+        if inputList[i + 1] == inputList[i]:
+            counter += 1
+        else:
+            if counter > longestRun:
+                longestRun = counter
+            counter = 1
+    return longestRun
+#
+### End Helper ###
                     
 # Implement this -- Coding Part 2 of 2
 def getAverage(die, numRolls, numTrials):
@@ -73,7 +94,15 @@ def getAverage(die, numRolls, numTrials):
       - Choose appropriate labels for the x and y axes.
       - Returns the mean calculated
     """
-    # TODO
-    
+    longestRunList = []
+    for trial in range(numTrials):
+        diceRoll = []
+        for roll in range(numRolls):
+            diceRoll.append(die.roll())
+        longestRunList.append(longestRun(diceRoll))
+    mean, std = getMeanAndStd(longestRunList)
+    makeHistogram(longestRunList, 10, 'Longest Run', 'Frequency', 'The Dice!')
+    return round(mean, 3)
+
 # One test case
 print(getAverage(Die([1,2,3,4,5,6,6,6,7]), 500, 10000))
