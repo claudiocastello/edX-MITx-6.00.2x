@@ -106,3 +106,48 @@ def getAverage(die, numRolls, numTrials):
 
 # One test case
 print(getAverage(Die([1,2,3,4,5,6,6,6,7]), 500, 10000))
+
+
+##########
+
+#
+# Probelem 6
+#
+import numpy as np
+def find_combination(choices, total):
+    """
+    choices: a non-empty list of ints
+    total: a positive int
+ 
+    Returns result, a numpy.array of length len(choices) 
+    such that
+        * each element of result is 0 or 1
+        * sum(result*choices) == total
+        * sum(result) is as small as possible
+    In case of ties, returns any result that works.
+    If there is no result that gives the exact total, 
+    pick the one that gives sum(result*choices) closest 
+    to total without going over.
+    """
+    import itertools
+    binaryCombinations = [list(i) for i in itertools.product([0, 1], repeat=(len(choices)))]
+    possibleResults = []
+    for result in binaryCombinations:
+        sumChoicesTimesResult = 0
+        for i in range(len(choices)):
+            sumChoicesTimesResult += choices[i] * result[i]
+            if sumChoicesTimesResult > total:
+                break
+        if sumChoicesTimesResult <= total:
+            possibleResults.append((result, sumChoicesTimesResult))
+    orderedPossibleResults = sorted(possibleResults, key=lambda tup: tup[1], reverse = True)
+    chosenResult = orderedPossibleResults[0]
+    for j in range(len(orderedPossibleResults) - 1):
+        if orderedPossibleResults[j+1][1] < orderedPossibleResults[j][1]:
+            break
+        else:
+            sum1 = sum(orderedPossibleResults[j][0])
+            sum2 = sum(orderedPossibleResults[j+1][0])
+            if sum2 < sum1:
+                chosenResult = orderedPossibleResults[j+1]
+    return np.array(chosenResult[0])
