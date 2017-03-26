@@ -146,8 +146,7 @@ def find_combination(choices, total):
         if orderedPossibleResults[j+1][1] < orderedPossibleResults[j][1]:
             break
         else:
-            sum1 = sum(orderedPossibleResults[j][0])
             sum2 = sum(orderedPossibleResults[j+1][0])
-            if sum2 < sum1:
+            if sum2 < sum(chosenResult[0]):
                 chosenResult = orderedPossibleResults[j+1]
     return np.array(chosenResult[0])
