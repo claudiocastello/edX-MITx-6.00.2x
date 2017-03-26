@@ -55,7 +55,10 @@ def makeHistogram(values, numBins, xLabel, yLabel, title=None):
       - If title is provided by caller, puts that title on the figure and otherwise
         does not title the figure
     """
-    # TODO
+    pylab.hist(values, numBins)
+    pylab.title(title)
+    pylab.xlabel(xLabel)
+    pylab.ylabel(yLabel)
     
                     
 # Implement this -- Coding Part 2 of 2
