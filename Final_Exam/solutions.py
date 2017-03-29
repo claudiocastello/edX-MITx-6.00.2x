@@ -150,3 +150,110 @@ def find_combination(choices, total):
             if sum2 < sum(chosenResult[0]):
                 chosenResult = orderedPossibleResults[j+1]
     return np.array(chosenResult[0])
+
+import random
+import pylab
+
+def rabbitGrowth():
+    """ 
+    rabbitGrowth is called once at the beginning of each time step.
+
+    It makes use of the global variables: CURRENTRABBITPOP and MAXRABBITPOP.
+
+    The global variable CURRENTRABBITPOP is modified by this procedure.
+
+    For each rabbit, based on the probabilities in the problem set write-up, 
+      a new rabbit may be born.
+    Nothing is returned.
+    """
+    # you need this line for modifying global variables
+    global CURRENTRABBITPOP
+
+    probRabRepr = 1.0 - (CURRENTRABBITPOP / MAXRABBITPOP)
+
+    reproductSuccess = random.random()
+
+    if reproductSuccess < probRabRepr:
+        CURRENTRABBITPOP += 1
+
+
+def foxGrowth():
+    """ 
+    foxGrowth is called once at the end of each time step.
+
+    It makes use of the global variables: CURRENTFOXPOP and CURRENTRABBITPOP,
+        and both may be modified by this procedure.
+
+    Each fox, based on the probabilities in the problem statement, may eat 
+      one rabbit (but only if there are more than 10 rabbits).
+
+    If it eats a rabbit, then with a 1/3 prob it gives birth to a new fox.
+
+    If it does not eat a rabbit, then with a 1/10 prob it dies.
+
+    Nothing is returned.
+    """
+    # you need these lines for modifying global variables
+    global CURRENTRABBITPOP
+    global CURRENTFOXPOP
+
+    probFoxGiveBirth = 1/3
+
+    probFoxDies = 1/10
+
+    probFoxEatsRabbit = CURRENTRABBITPOP / MAXRABBITPOP
+
+    for fox in range(CURRENTFOXPOP):
+        huntSuccess = random.random()
+
+        if huntSuccess < probFoxEatsRabbit and CURRENTRABBITPOP > 10:
+            CURRENTRABBITPOP -= 1
+            foxBirthSuccess = random.random()
+            if foxBirthSuccess < probFoxGiveBirth:
+                CURRENTFOXPOP += 1
+        else:
+            foxDieChance = random.random()
+            if foxDieChance < probFoxDies and CURRENTFOXPOP > 10:
+                CURRENTFOXPOP -= 1
+    
+
+def runSimulation(numSteps):
+    """
+    Runs the simulation for `numSteps` time steps.
+
+    Returns a tuple of two lists: (rabbit_populations, fox_populations)
+      where rabbit_populations is a record of the rabbit population at the 
+      END of each time step, and fox_populations is a record of the fox population
+      at the END of each time step.
+
+    Both lists should be `numSteps` items long.
+    """
+    stepRabbitPop = 0
+    stepFoxPop = 0
+    popList = ([],[])
+    for step in range(numSteps):
+        rabbitGrowth()
+        foxGrowth()
+        stepRabbitPop = CURRENTRABBITPOP
+        stepFoxPop = CURRENTFOXPOP
+
+        popList[0].append(stepRabbitPop)
+        popList[1].append(stepFoxPop)
+
+    pylab.figure('Rabbits and Foxes')
+    pylab.clf()
+    pylab.plot([step for step in range(numSteps)], popList[0], 'b-', label = 'Rabbit Pop')
+    pylab.plot([step for step in range(numSteps)], popList[1], 'r-', label = 'Fox Pop')
+    pylab.legend(loc = 'best')
+    pylab.title('Foxes and Rabbits Population')
+    pylab.xlabel('Step')
+    pylab.ylabel('Population')
+
+    return popList
+
+# Test with Global Variables
+MAXRABBITPOP = 1000
+CURRENTRABBITPOP = 500
+CURRENTFOXPOP = 30
+
+runSimulation(200)
